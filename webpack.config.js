@@ -5,18 +5,43 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 const isProd = process.env.NODE_ENV === 'prod';
-const cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+
+const cssDev = [
+    {loader: 'style-loader'},
+    {loader: 'css-loader'},
+    {
+        loader: 'postcss-loader',
+        options: {
+            plugins: () => [
+                require('precss'),
+                require('autoprefixer')
+            ]
+        }
+    },
+    {loader: 'sass-loader'}
+];
 const cssProd = ExtractTextPlugin.extract({
     fallback: "style-loader",
-    use: ["css-loader", 'sass-loader']
-    // publicPath: '/dist'
+    use: [
+        {loader: "css-loader"},
+        {
+            loader: 'postcss-loader',
+            options: {
+                plugins: () => [
+                    require('precss'),
+                    require('autoprefixer')
+                ]
+            }
+        },
+        {loader: 'sass-loader'}
+    ]
 });
 
 const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
     entry: {
-        app: './src/app.js'
+        app: './src/scripts/app.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -49,6 +74,16 @@ module.exports = {
                     },
                     'image-webpack-loader'
                 ]
+            },
+            {
+                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'    // where the fonts will go
+                    }
+                }]
             }
         ]
     },
@@ -75,6 +110,12 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin({}),
         new webpack.NamedModulesPlugin(),
-        new CleanWebpackPlugin(['dist'])
+        new CleanWebpackPlugin(['dist']),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        })
     ]
 };
