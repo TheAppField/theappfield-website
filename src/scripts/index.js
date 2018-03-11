@@ -1,7 +1,38 @@
 import './../scss/main.scss';
+import 'jquery';
+
+$("#btnMore").click(function () {
+  $('html, body').animate({
+    scrollTop: $("#aboutContainer").offset().top
+  }, 500);
+});
+
+
+/**
+ *  Header
+ */
+const headerShrinker = function () {
+  const header = $('.header'),
+    heroHeight = header.outerHeight(true);
+  $(header).parent().css('padding-top', heroHeight);
+  $(window).scroll(function () {
+    const scrollOffset = $(window).scrollTop();
+    if (scrollOffset < heroHeight) {
+      $(header).css('height', (heroHeight - scrollOffset));
+    }
+    if (scrollOffset > (heroHeight - 215)) {
+      header.addClass('fixme');
+    } else {
+      header.removeClass('fixme');
+    }
+  });
+};
+
+$('document').ready(() => {
+  headerShrinker();
+});
 
 // import 'bootstrap';
-// import 'jquery.easing';
 // import ScrollReveal from 'scrollreveal';
 //
 // const css = require('../scss/main.scss');
@@ -15,6 +46,25 @@ import './../scss/main.scss';
 //             var target = $(this.hash);
 //             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 //             if (target.length) {
+// (function ($) {
+//     "use strict"; // Start of use strict
+//
+//     // Smooth scrolling using jQuery easing
+//     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+//         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+//             var target = $(this.hash);
+//             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+//             if (target.length) {
+//                 $('html, body').animate({
+//                     scrollTop: (target.offset().top - 48)
+//                 }, 1000, "easeInOutExpo");
+//                 return false;
+//             }
+//         }
+//     });
+//
+//     // Closes responsive menu when a scroll trigger link is clicked
+//     $('.js-scroll-trigger').click(func
 //                 $('html, body').animate({
 //                     scrollTop: (target.offset().top - 48)
 //                 }, 1000, "easeInOutExpo");

@@ -1,4 +1,15 @@
-//@import "node_modules/bootstrap/scss/bootstrap";
-@import '~bootstrap/scss/bootstrap';
+$body-bg: #FFFED3;
+$body-color: #251605;
 
-$body-bg: #FFCA28;
+$theme-colors: (
+        "primary": #285F28,
+        "secondary": #77BA99,
+        "success": #7BE0AD,
+        "info": #7FB7BE,
+        "warning": #DD6E42,
+        "danger": #BA2D0B,
+        "light": #668541,
+        "dark": #2F3B2A
+);
+
+@import '~bootstrap/scss/bootstrap';

@@ -2,15 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TheAppfield</title>
     <script src="bundle.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
 </head>
 <body>
 
-<div class="jumbotron">
-    <h1 class="display-4">TheAppField
-        <small>Roman Muehlfeldner</small>
-    </h1>
-</div>
+<section class="header bg-primary">
+    <div class="header-container">
+        <h1 class="header-title">TheAppField<br>
+            <small>Roman Muehlfeldner</small>
+        </h1>
+    </div>
+
+    <div class="more-container">
+        <button type="button" id="btnMore" class="btn btn-link">
+            <i class="fal fa-3x fa-arrow-down"></i>
+        </button>
+    </div>
+</section>
+
+<section id="aboutContainer" class="fluid-container section">
+    <h2 class="title">About Me</h2>
+</section>
+
+
 </body>
 </html>

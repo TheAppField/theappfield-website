@@ -48,6 +48,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'webfonts/'    // where the fonts will go
+          }
+        }]
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
@@ -64,10 +74,30 @@ module.exports = {
         ]
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img/'
+            }
+          },
+          'image-webpack-loader'
+        ]
+      },
+      {
         test: /\.(scss)$/,
         use: cssConfig
       }
     ]
+  },
+  resolve: {
+    alias: {
+      '@fortawesome/fontawesome-pro-solid$': '@fortawesome/fontawesome-pro-solid/shakable.es.js',
+      '@fortawesome/fontawesome-pro-regular$': '@fortawesome/fontawesome-pro-regular/shakable.es.js',
+      '@fortawesome/fontawesome-pro-light': '@fortawesome/fontawesome-pro-light/shakable.es.js'
+    }
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -81,7 +111,12 @@ module.exports = {
       allChunks: true
     }),
     new CleanWebpackPlugin(["dist"]),
-    new webpack.NamedModulesPlugin()
-
+    new webpack.NamedModulesPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default']
+    })
   ]
 };
