@@ -29,7 +29,7 @@ const headerShrinker = function () {
 };
 
 $('document').ready(() => {
-  headerShrinker();
+  // headerShrinker();
 });
 
 // import 'bootstrap';

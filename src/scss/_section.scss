@@ -1,14 +1,23 @@
 .section {
   height: 100vh;
-  padding-top: 2rem;
+  padding-top: 4rem;
 
   .title {
-    font-size: 4rem;
+    font-size: 6rem;
     //text-shadow: 1px 2px 5px #000;
     text-align: center;
-    color: rgba(0, 0, 0, 0.6);
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+    //text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 
   }
 
+}
+
+@include media-breakpoint-between(xs, sm) {
+  .section {
+    padding-top: 3rem;
+    .title {
+      font-size: 3rem;
+    }
+
+  }
 }
