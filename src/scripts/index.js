@@ -8,9 +8,7 @@ $("#btnMore").click(function () {
 });
 
 
-/**
- *  Header
- */
+/*  Header */
 const headerShrinker = function () {
   const header = $('.header'),
     heroHeight = header.outerHeight(true);
@@ -28,8 +26,31 @@ const headerShrinker = function () {
   });
 };
 
+const timelineAnimatons = function () {
+  // animations for timeline
+  const $timelineBlock = $('.timeline-item');
+
+  //hide timeline blocks which are outside the viewport
+  $timelineBlock.each(function () {
+    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+      $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+    }
+  });
+
+  //on scolling, show/animate timeline blocks when enter the viewport
+  $(window).on('scroll', function () {
+    $timelineBlock.each(function () {
+      console.log("item");
+      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.timeline-icon').hasClass('is-hidden')) {
+        $(this).find("timeline-icon").removeClass('is-hidden').addClass('bounce-in');
+      }
+    });
+  });
+};
+
 $('document').ready(() => {
   // headerShrinker();
+  timelineAnimatons();
 });
 
 // import 'bootstrap';
