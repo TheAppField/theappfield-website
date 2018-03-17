@@ -1,9 +1,9 @@
 import './../scss/main.scss';
 import 'jquery';
 
-$("#btnMore").click(function () {
+$('#btnMore').click(function () {
   $('html, body').animate({
-    scrollTop: $("#aboutContainer").offset().top
+    scrollTop: $('#aboutContainer').offset().top
   }, 500);
 });
 
@@ -33,16 +33,16 @@ const timelineAnimatons = function () {
   //hide timeline blocks which are outside the viewport
   $timelineBlock.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-      $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
+      $(this).find('.timeline-icon, .timeline-content').addClass('is-hidden');
     }
   });
 
   //on scolling, show/animate timeline blocks when enter the viewport
   $(window).on('scroll', function () {
     $timelineBlock.each(function () {
-      console.log("item");
       if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.timeline-icon').hasClass('is-hidden')) {
-        $(this).find("timeline-icon").removeClass('is-hidden').addClass('bounce-in');
+        $(this).find('.timeline-icon').removeClass('is-hidden').addClass('bounce-in');
+        $(this).find('.timeline-content').removeClass('is-hidden').addClass('fade-in');
       }
     });
   });

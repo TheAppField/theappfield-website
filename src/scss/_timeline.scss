@@ -1,6 +1,7 @@
 $timeline-color: map-get($theme-colors, light);
-$timeline-content-color: map-get($theme-colors, secondary);
-$line-color: map-get($theme-colors, secondary);
+$timeline-content-color: map-get($theme-colors, primary);
+$timeline-content-color: #484C2F;
+$line-color: map-get($theme-colors, light);
 
 // Mixins and Placeholders
 %clearfix {
@@ -54,40 +55,51 @@ $line-color: map-get($theme-colors, secondary);
     @extend %clearfix;
 
     .timeline-icon {
-      transform: scale(0);
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: $line-color;
       color: white;
-      width: 50px;
-      height: 50px;
+      width: 70px;
+      height: 70px;
       line-height: 50px;
-      font-size: 1.4em;
       text-align: center;
       position: absolute;
       left: 50%;
-      margin-left: -23px;
+      margin-left: -33px;
       z-index: 100;
       border: 4px solid white;
       border-radius: 50%;
+      font-size: 1.75rem;
       @include prefix(box-shadow, 0 1px 6px rgba(0, 0, 0, 0.175));
 
-      //.fal:before {
-      //  position: relative;
-      //  top: 18px;
-      //  left: 20px;
-      //  color: $body-bg;
-      //}
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+
+      &.is-hidden {
+        visibility: hidden;
+        transform: scale(0);
+      }
     }
 
     .timeline-content {
       width: 45%;
       background: $line-color;
       padding: 1.5rem;
+      text-align: center;
       @include prefix(box-shadow, 0 1px 6px rgba(0, 0, 0, 0.175));
       @include prefix(border-radius, $border-radius);
       @include prefix(transition, all .3s ease);
+
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+
+      &.is-hidden {
+        visibility: hidden;
+        transform: translate3d(0, 20px, 0);
+      }
 
       .timeline-title {
         color: $body-bg;
@@ -124,10 +136,12 @@ $line-color: map-get($theme-colors, secondary);
       }
     }
   }
+
 }
 
 .bounce-in {
-  animation: timeline-bounce;
+  visibility: visible;
+  animation: timeline-bounce .6s;
 }
 
 @keyframes timeline-bounce {
@@ -143,5 +157,21 @@ $line-color: map-get($theme-colors, secondary);
 
   100% {
     transform: scale(1);
+  }
+}
+
+.fade-in {
+  visibility: visible;
+  animation: timeline-fade-in .6s;
+}
+
+@keyframes timeline-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
