@@ -61,10 +61,17 @@
       background-color: rgba(0, 0, 0, 0.35);
       border-radius: 50%;
       animation: float 3s infinite alternate;
+      //transition: transform .3s;
 
       &:hover {
-        //background-color: map-get($theme-colors, "primary");
+        //animation: paused;
       }
+
+      //&:focus {
+      //  animation: paused;
+      //  transition: transform .3s;
+      //  transform: scale(1.2);
+      //}
     }
 
     .btn-link {
