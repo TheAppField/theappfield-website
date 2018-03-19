@@ -145,6 +145,7 @@ $line-color: map-get($theme-colors, light);
   .timeline {
     &:before {
       left: 26px;
+      height: calc(100% - 305px);
     }
     .timeline-item {
       .timeline-icon {
@@ -154,9 +155,45 @@ $line-color: map-get($theme-colors, light);
       .timeline-content {
         width: 80%;
         float: right;
+        //position: relative;
+      }
+
+      &:last-of-type::before {
+        content: "";
+        position: absolute;
+        width: calc(50% - 10px);
+        right: 50%;
+        height: 4px;
+        background: $line-color;
       }
     }
   }
+}
+
+//
+//@include media-breakpoint-only(xs) {
+//  .timeline {
+//    &:before {
+//      //height: calc(100% - 150px);
+//    }
+//
+//    .timeline-img {
+//      width: 293px;
+//
+//      &:before {
+//        content: "";
+//        position: absolute;
+//        right: 50%;
+//        width: calc(50% - 26px);
+//        height: 4px;
+//        background: $line-color;
+//      }
+//    }
+//  }
+//}
+
+@include media-breakpoint-between(sm, md) {
+
 }
 
 .bounce-in {
