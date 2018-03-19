@@ -111,32 +111,52 @@ $line-color: map-get($theme-colors, light);
         color: white;
       }
 
-      &:before {
-        content: "";
-        position: absolute;
-        left: 45%;
-        top: 20px;
-        width: 0;
-        height: 0;
-        border-top: 7px solid transparent;
-        border-bottom: 7px solid transparent;
-        border-left: 7px solid $line-color;
+      //&:before {
+      //  content: "";
+      //  position: absolute;
+      //  left: 45%;
+      //  top: 20px;
+      //  width: 0;
+      //  height: 0;
+      //  border-top: 7px solid transparent;
+      //  border-bottom: 7px solid transparent;
+      //  border-left: 7px solid $line-color;
+      //}
+
+      //&:nth-child(odd) {
+      //  float: right;
+      //}
+      //&:before {
+      //  content: '';
+      //  right: 45%;
+      //  left: inherit;
+      //  border-left: 0;
+      //  border-right: 7px solid $line-color;
+      //}
+    }
+
+    &:nth-child(even) .timeline-content {
+      float: right;
+    }
+  }
+}
+
+@include media-breakpoint-between(xs, md) {
+  .timeline {
+    &:before {
+      left: 26px;
+    }
+    .timeline-item {
+      .timeline-icon {
+        left: 10px;
       }
 
-      &.right {
+      .timeline-content {
+        width: 80%;
         float: right;
-
-        &:before {
-          content: '';
-          right: 45%;
-          left: inherit;
-          border-left: 0;
-          border-right: 7px solid $line-color;
-        }
       }
     }
   }
-
 }
 
 .bounce-in {
