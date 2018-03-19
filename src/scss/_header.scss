@@ -78,6 +78,27 @@
       color: $body-bg;
     }
   }
+  .bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    background: linear-gradient(
+                    transparent 0%,
+                    hsla(11, 48%, 77%, 0.002) 19%,
+                    hsla(11, 48%, 77%, 0.008) 34%,
+                    hsla(11, 48%, 77%, 0.021) 47%,
+                    hsla(11, 48%, 77%, 0.042) 56.5%,
+                    hsla(11, 48%, 77%, 0.075) 65%,
+                    hsla(11, 48%, 77%, 0.126) 73%,
+                    hsla(11, 48%, 77%, 0.194) 80.2%,
+                    hsla(11, 48%, 77%, 0.278) 86.1%,
+                    hsla(11, 48%, 77%, 0.382) 91%,
+                    hsla(11, 48%, 77%, 0.541) 95.2%,
+                    hsla(11, 48%, 77%, 0.738) 98.2%,
+                    hsla(11, 48%, 77%, 100) 100%)
+  }
 }
 
 @include media-breakpoint-between(xs, sm) {
