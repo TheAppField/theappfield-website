@@ -10,8 +10,8 @@ $('#btnMore').click(function () {
 
 /*  Header */
 const headerShrinker = function () {
-  const header = $('.header'),
-    heroHeight = header.outerHeight(true);
+  const header = $('.header');
+  const heroHeight = header.outerHeight(true);
   $(header).parent().css('padding-top', heroHeight);
   $(window).scroll(function () {
     const scrollOffset = $(window).scrollTop();
@@ -29,7 +29,6 @@ const headerShrinker = function () {
 const timelineAnimatons = function () {
   // animations for timeline
   const $timelineItems = $('.timeline-item');
-  console.log("timeline items:", $timelineItems.length);
   //hide timeline blocks which are outside the viewport
   $timelineItems.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
