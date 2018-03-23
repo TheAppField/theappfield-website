@@ -13,7 +13,6 @@
 
 @include media-breakpoint-between(xs, sm) {
   .section {
-    padding-top: 3rem;
     .title {
       font-size: 4rem;
     }
