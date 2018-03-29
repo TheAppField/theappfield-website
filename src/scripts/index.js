@@ -28,20 +28,31 @@ const headerShrinker = function () {
 
 const timelineAnimatons = function () {
   // animations for timeline
-  const $timelineItems = $('.timeline-item');
+  const timelineItems = $('.timeline-item');
+  const tiles = $('.tile');
   //hide timeline blocks which are outside the viewport
-  $timelineItems.each(function () {
+  timelineItems.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
       $(this).find('.timeline-icon, .timeline-content, .timeline-img').addClass('is-hidden');
+    }
+  });
+  tiles.each(function (idx) {
+    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+      $(tiles[idx]).addClass('is-hidden');
     }
   });
 
   //on scolling, show/animate timeline blocks when enter the viewport
   $(window).on('scroll', function () {
-    $timelineItems.each(function () {
+    timelineItems.each(function () {
       if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.timeline-icon, .timeline-img').hasClass('is-hidden')) {
         $(this).find('.timeline-icon').removeClass('is-hidden').addClass('bounce-in');
         $(this).find('.timeline-content, .timeline-img').removeClass('is-hidden').addClass('fade-in');
+      }
+    });
+    tiles.each(function (idx) {
+      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(tiles[idx]).hasClass('is-hidden')) {
+        $(tiles[idx]).removeClass('is-hidden').addClass('fade-in');
       }
     });
   });

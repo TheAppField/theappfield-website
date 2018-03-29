@@ -1,45 +1,80 @@
-.tile {
-  text-align: center;
-  color: white;
+.tiles-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-  .tile-title {
-    color: $body-bg;
-    font-size: 3rem;
-    padding: 2rem 0 1rem 0;
+  a.tile:hover {
+    text-decoration: none;
+    transform: scale(1.05);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
   }
-  .btn-secondary {
-    color: white;
-  }
-
-  .in-development {
-
-  }
-}
-
-.tile:nth-of-type(odd) {
-  background-color: map-get($theme-colors, primary);
-  border-radius: $border-radius 0 0 $border-radius;
-}
-
-.tile:nth-of-type(even) {
-  background-color: map-get($theme-colors, light);
-  border-radius: 0 $border-radius $border-radius 0
-}
-
-@include media-breakpoint-between (xs, sm) {
-  .tile:first-of-type {
-    border-radius: $border-radius $border-radius 0 0;
-  }
-
-  .tile:last-of-type {
-    border-radius: 0 0 $border-radius $border-radius;
-  }
-
   .tile {
-    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    text-align: center;
+    color: white;
+    background-color: map-get($theme-colors, light);
+    border-radius: $border-radius;
+    margin-bottom: 2rem;
+    transition: all .3s ease;
+
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+
+    &.is-hidden {
+      visibility: hidden;
+      transform: translate3d(0, 20px, 0);
+    }
+
+    .tile-title {
+      color: $body-bg;
+      font-size: 3rem;
+      padding: 2rem 0 1rem 0;
+    }
+
+    .tile-inner-text {
+      padding: 0 .5rem;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+
+      p:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .btn-secondary {
+      color: white;
+    }
+  }
+}
+
+@include media-breakpoint-between (xs, md) {
+  .tiles-container {
+    flex-direction: column;
+
+    .tile {
+      width: 100%;
+    }
+  }
+}
+
+.fade-in {
+  visibility: visible;
+  animation: fade-in .6s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
