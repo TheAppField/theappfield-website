@@ -16,9 +16,16 @@
       color: white;
       font-size: 1.1rem;
       padding: 1rem 2rem;
+      transition: transform .6s;
 
       &::placeholder {
         color: $body-bg;
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: 0 none;
+        transform: scale(1.025);
       }
     }
     .contact-message {
@@ -34,6 +41,13 @@
       color: $body-bg;
       padding: 1rem;
       margin: 2rem 1rem;
+      transition: transform .6s;
+
+      &:focus {
+        box-shadow: none;
+        outline: 0 none;
+        transform: scale(1.025);
+      }
     }
   }
 }
