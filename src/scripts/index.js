@@ -30,6 +30,7 @@ const timelineAnimatons = function () {
   // animations for timeline
   const timelineItems = $('.timeline-item');
   const tiles = $('.tile');
+  const contactFields = $('.contact');
   //hide timeline blocks which are outside the viewport
   timelineItems.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
@@ -39,6 +40,11 @@ const timelineAnimatons = function () {
   tiles.each(function (idx) {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
       $(tiles[idx]).addClass('is-hidden');
+    }
+  });
+  contactFields.each(function (idx) {
+    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+      $(contactFields[idx]).addClass('is-hidden');
     }
   });
 
@@ -53,6 +59,11 @@ const timelineAnimatons = function () {
     tiles.each(function (idx) {
       if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(tiles[idx]).hasClass('is-hidden')) {
         $(tiles[idx]).removeClass('is-hidden').addClass('fade-in');
+      }
+    });
+    contactFields.each(function (idx) {
+      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(contactFields[idx]).hasClass('is-hidden')) {
+        $(contactFields[idx]).removeClass('is-hidden').addClass('fade-in');
       }
     });
   });

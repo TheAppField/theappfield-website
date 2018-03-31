@@ -1,0 +1,20 @@
+.is-hidden {
+  visibility: hidden;
+  transform: translate3d(0, 20px, 0);
+}
+
+.fade-in {
+  visibility: visible;
+  animation: fade-in .6s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
