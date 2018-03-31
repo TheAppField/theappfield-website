@@ -1,8 +1,6 @@
 .contact-me {
   .contact-me-container {
-    //background-color: map-get($theme-colors, light);
-    //border-radius: $border-radius;
-    padding: 2rem;
+    //padding: 2rem;
 
     .form-group {
       margin-bottom: 2rem;
@@ -14,12 +12,10 @@
 
     .form-control {
       background-color: map-get($theme-colors, light);
-      //border: 3px solid $body-bg;
       border: none;
-      //background-color: $body-bg;
       color: white;
-      //border-radius: 0;
       font-size: 1.1rem;
+      padding: 1rem 2rem;
 
       &::placeholder {
         color: white;

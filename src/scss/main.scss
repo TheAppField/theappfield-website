@@ -18,3 +18,9 @@ h1, h2, h3, h4, h5, h6 {
 html, body {
   font-size: 1.05rem;
 }
+
+@include media-breakpoint-between(xs, sm) {
+  .row .col-xs-12:nth-child(odd) {
+    padding-bottom: 2rem;
+  }
+}
