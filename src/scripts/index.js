@@ -1,5 +1,7 @@
 import './../scss/main.scss';
 import 'jquery';
+import 'jquery-validation';
+import 'jquery-form';
 import './contact-form';
 
 $('#btnMore').click(function () {

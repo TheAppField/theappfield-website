@@ -10,6 +10,28 @@ footer {
 
   .form-group {
     margin-bottom: 2rem;
+
+    .form-control.error {
+      border: 1px solid map_get($theme-colors, danger);
+      border-bottom: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &:focus + label.error {
+        transform: scale(1.025);
+      }
+    }
+    label.error {
+      width: 100%;
+      font-size: .8rem;
+      padding: .5rem;
+      color: map_get($theme-colors, danger);
+      background-color: $body-bg;
+      border: 1px solid map_get($theme-colors, danger);
+      border-top: none;
+      border-radius: 0, 0, $border-radius $border-radius;
+      transition: transform .6s;
+    }
   }
 
   .form-control {

@@ -1,10 +1,39 @@
 $(document).ready(function () {
 
   $('#submit').click(function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    const form = $('contactForm');
+    const form = $('#contactForm');
+    form.validate({
+      rules: {
+        email: {
+          required: true,
+          email: true
+        },
+        name: {
+          required: true
+        },
+        subject: {
+          required: true
+        },
+        message: {
+          required: true
+        }
+      },
+      messages: {
+        email: 'Bitte geben Sie eine g&uumlltige E-Mail Adresse an, damit ich Sie kontaktieren kann.',
+        name: 'Bitte geben Sie Ihren Namen an.',
+        subject: 'Bitte geben Sie Ihren Betreff an.',
+        message: 'Bitte geben Sie Ihre Nachricht an.'
+      },
+      submitHandler: () => {
+        $('#contactForm').ajaxSubmit(() => {
+          callLambda();
+          return false;
+        });
+      }
+    });
+  });
 
+  function callLambda() {
     const email = $('#contactEmail').val(),
       name = $('#contactName').val(),
       subject = $('#contactSubject').val(),
@@ -23,8 +52,7 @@ $(document).ready(function () {
       success: sendSuccessHandler,
       error: sendErrorHandler
     });
-
-  });
+  }
 
   function sendSuccessHandler(result) {
     console.log('Send!', result);
