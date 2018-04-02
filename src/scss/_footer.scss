@@ -29,7 +29,7 @@ footer {
       background-color: $body-bg;
       border: 1px solid map_get($theme-colors, danger);
       border-top: none;
-      border-radius: 0, 0, $border-radius $border-radius;
+      border-radius: 0 0 $border-radius $border-radius;
       transition: transform .6s;
     }
   }

@@ -46,8 +46,14 @@ const timelineAnimatons = function () {
     }
   });
   contactFields.each(function (idx) {
-    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-      $(contactFields[idx]).addClass('is-hidden');
+    if (idx !== contactFields.length - 1) {
+      if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+        $(contactFields[idx]).addClass('is-hidden');
+      }
+    } else {
+      if ($(this).offset().top > $(window).scrollTop() + $(window).height()) {
+        $(contactFields[idx]).addClass('is-hidden');
+      }
     }
   });
 
