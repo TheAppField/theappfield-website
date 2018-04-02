@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let isLoading = false;
 
   $('#submit').click(function (event) {
     const form = $('#contactForm');
@@ -26,7 +27,13 @@ $(document).ready(function () {
       },
       submitHandler: () => {
         $('#contactForm').ajaxSubmit(() => {
-          callLambda();
+          if (!isLoading) {
+            isLoading = true;
+            $('#submit-animate').addClass('loading');
+            callLambda();
+            return false;
+          }
+
           return false;
         });
       }
@@ -55,12 +62,21 @@ $(document).ready(function () {
   }
 
   function sendSuccessHandler(result) {
+    $('#submit-success').show();
+    $('#submit-error').hide();
+    $('#submit-animate').removeClass('loading');
+    $('#submit-animate').addClass('sent');
     console.log('Send!', result);
   }
 
   function sendErrorHandler(error) {
     console.log('Failed sending data', error);
+    $('#submit-success').hide();
+    $('#submit-error').show();
+    $('#submit-animate').removeClass('loading');
+    $('#submit-animate').addClass('sent');
 
+    isLoading = false;
   }
 
 });

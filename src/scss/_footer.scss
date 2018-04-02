@@ -58,13 +58,31 @@ footer {
     font-size: 1.1rem;
     background-color: $body-bg;
     color: map-get($theme-colors, light);
-    padding: 1rem;
-    transition: transform .6s;
+    transition: all .3s;
+    padding: 0;
+    // for animation
+    height: 63px;
+    overflow: hidden;
 
     &:hover {
       box-shadow: none;
       outline: 0 none;
       transform: scale(1.025);
+    }
+
+    span {
+      display: block;
+      padding: 1rem;
+      transition: .3s;
+    }
+    .normal {
+      margin-top: 0;
+    }
+    .loading {
+      margin-top: -3.5rem;
+    }
+    .sent {
+      margin-top: -7.1rem;
     }
   }
 
