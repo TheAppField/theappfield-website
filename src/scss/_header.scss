@@ -101,7 +101,7 @@
   }
 }
 
-@include media-breakpoint-between(xs, sm) {
+@include media-breakpoint-between(xs, md) {
   .header {
     //padding: 8rem 1rem;
     width: auto;
@@ -123,6 +123,18 @@
         font-size: 0.5em;
       }
     }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .header .header-title {
+    font-size: 7rem;
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  .header .header-title {
+    font-size: 8rem;
   }
 }
 
