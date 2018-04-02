@@ -1,5 +1,6 @@
 import './../scss/main.scss';
 import 'jquery';
+import './contact-form';
 
 $('#btnMore').click(function () {
   $('html, body').animate({

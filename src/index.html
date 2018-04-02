@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TheAppfield</title>
-    <script src="bundle.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poiret+One">
 </head>
@@ -162,28 +161,28 @@
         <div class="row">
             <div class="col-xs-12 col-md-6">
                 <h2 class="title">Kontakt</h2>
-                <form>
+                <form id="contactForm">
                     <div class="form-group contact contact-mail">
-                        <label for="contactMail" class="sr-only">E-Mail Adresse</label>
-                        <input type="email" class="form-control" id="contactMail" aria-describedby="emailContact"
+                        <label for="contactEmail" class="sr-only">E-Mail Adresse</label>
+                        <input type="email" class="form-control" id="contactEmail" name="email" aria-describedby="emailContact"
                                placeholder="E-MAIL ADRESSE" required>
                     </div>
                     <div class="form-group contact contact-name">
                         <label for="contactName" class="sr-only">Name</label>
-                        <input type="text" class="form-control" id="contactName" aria-describedby="nameContact"
+                        <input type="text" class="form-control" id="contactName" name="name" aria-describedby="nameContact"
                                placeholder="NAME" required>
                     </div>
                     <div class="form-group contact contact-subject">
                         <label for="contactSubject" class="sr-only">Betreff</label>
-                        <input typea="text" class="form-control" id="contactSubject" aria-describedby="subjectContact"
+                        <input type="text" class="form-control" id="contactSubject" name="subject" aria-describedby="subjectContact"
                                placeholder="BETREFF" required>
                     </div>
                     <div class="form-group contact contact-message">
-                        <label class="sr-only" for="contactText">Ihre Nachricht</label>
-                        <textarea class="form-control" id="contactText" aria-describedby="messageContact"
+                        <label class="sr-only" for="contactMessage">Ihre Nachricht</label>
+                        <textarea class="form-control" id="contactMessage" name="message" aria-describedby="messageContact"
                                   placeholder="IHRE NACHRICHT" required rows="5"></textarea>
                     </div>
-                    <button type="submit" class="contact contact-submit btn btn-block">SENDEN</button>
+                    <button id="submit" type="submit" class="contact contact-submit btn btn-block">SENDEN</button>
                 </form>
             </div>
             <div class="col-xs-12  col-md-6">
