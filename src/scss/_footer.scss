@@ -92,4 +92,36 @@ footer {
     font-size: .75rem;
     color: $body-bg;
   }
+
+  .external-links {
+    padding: .5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $line-color;
+      color: white;
+      width: 70px;
+      height: 70px;
+      line-height: 50px;
+      text-align: center;
+
+      z-index: 100;
+      border: 4px solid white;
+      border-radius: 50%;
+      font-size: 1.75rem;
+      @include prefix(box-shadow, 0 1px 6px rgba(0, 0, 0, 0.175));
+      transition: transform .3s, color .3s;
+
+      &:hover {
+        transform: scale(1.05);
+        color: white;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
