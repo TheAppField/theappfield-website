@@ -23,7 +23,8 @@
     "jquery-form": "^4.2.2",
     "jquery-validation": "^1.17.0",
     "npm": "^5.8.0",
-    "popper.js": "^1.14.1"
+    "npm-check-updates": "^2.14.1",
+    "popper.js": "^1.14.3"
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
@@ -35,15 +36,15 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.2.0",
     "node-sass": "^4.8.3",
     "postcss-loader": "^2.1.3",
     "precss": "^3.1.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "webpack": "^4.4.1",
-    "webpack-cli": "^2.0.13",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.1"
   }
 }

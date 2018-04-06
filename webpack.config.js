@@ -1,10 +1,10 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack");
+const path = require('path');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production';
 
 const cssDev = [
   {loader: 'style-loader'},
@@ -21,9 +21,9 @@ const cssDev = [
   {loader: 'sass-loader'}
 ];
 const cssProd = ExtractTextPlugin.extract({
-  fallback: "style-loader",
+  fallback: 'style-loader',
   use: [
-    {loader: "css-loader"},
+    {loader: 'css-loader'},
     {
       loader: 'postcss-loader',
       options: {
@@ -40,7 +40,7 @@ const cssProd = ExtractTextPlugin.extract({
 const cssConfig = isProd ? cssProd : cssDev;
 
 module.exports = {
-  entry: "./src/scripts/index.js",
+  entry: './src/scripts/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -68,7 +68,7 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader",
+            loader: 'html-loader',
             options: {minimize: true}
           }
         ]
@@ -94,23 +94,24 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@fortawesome/fontawesome-pro-solid$': '@fortawesome/fontawesome-pro-solid/shakable.es.js',
-      '@fortawesome/fontawesome-pro-regular$': '@fortawesome/fontawesome-pro-regular/shakable.es.js',
+      '@fortawesome/fontawesome-pro-solid': '@fortawesome/fontawesome-pro-solid/shakable.es.js',
+      '@fortawesome/fontawesome-pro-regular': '@fortawesome/fontawesome-pro-regular/shakable.es.js',
       '@fortawesome/fontawesome-pro-light': '@fortawesome/fontawesome-pro-light/shakable.es.js'
     }
   },
+
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
       minify: {collapseWhitespace: true},
       hash: true
     }),
     new ExtractTextPlugin({
-      filename: "main.css",
+      filename: 'main.css',
       disable: !isProd,
       allChunks: true
     }),
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(['dist']),
     new webpack.NamedModulesPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',

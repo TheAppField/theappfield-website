@@ -1,4 +1,8 @@
 import './../scss/main.scss';
+import fontawesome from '@fortawesome/fontawesome';
+import brands from '@fortawesome/fontawesome-free-brands';
+fontawesome.library.add(brands);
+
 import 'jquery';
 import 'jquery-validation';
 import 'jquery-form';
