@@ -1,6 +1,7 @@
 import './../scss/main.scss';
 import fontawesome from '@fortawesome/fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
+
 fontawesome.library.add(brands);
 
 import 'jquery';
@@ -36,17 +37,19 @@ const headerShrinker = function () {
 const timelineAnimatons = function () {
   // animations for timeline
   const timelineItems = $('.timeline-item');
-  const tiles = $('.tile');
+  const animateFadeIn = $('.tile, .external-link');
   const contactFields = $('.contact');
+
+
   //hide timeline blocks which are outside the viewport
   timelineItems.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
       $(this).find('.timeline-icon, .timeline-content, .timeline-img').addClass('is-hidden');
     }
   });
-  tiles.each(function (idx) {
+  animateFadeIn.each(function (idx) {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-      $(tiles[idx]).addClass('is-hidden');
+      $(animateFadeIn[idx]).addClass('is-hidden');
     }
   });
   contactFields.each(function (idx) {
@@ -69,9 +72,9 @@ const timelineAnimatons = function () {
         $(this).find('.timeline-content, .timeline-img').removeClass('is-hidden').addClass('fade-in');
       }
     });
-    tiles.each(function (idx) {
-      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(tiles[idx]).hasClass('is-hidden')) {
-        $(tiles[idx]).removeClass('is-hidden').addClass('fade-in');
+    animateFadeIn.each(function (idx) {
+      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(animateFadeIn[idx]).hasClass('is-hidden')) {
+        $(animateFadeIn[idx]).removeClass('is-hidden').addClass('fade-in');
       }
     });
 
