@@ -102,7 +102,14 @@ module.exports = {
 
   plugins: [
     new HtmlWebPackPlugin({
+      filename: 'index.html',
       template: './src/index.html',
+      minify: {collapseWhitespace: true},
+      hash: true
+    }),
+    new HtmlWebPackPlugin({
+      filename: 'impressum.html',
+      template: './src/impressum.html',
       minify: {collapseWhitespace: true},
       hash: true
     }),

@@ -52,6 +52,15 @@
     small {
       font-size: 0.4em;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 
   .more-container {
