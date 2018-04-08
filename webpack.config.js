@@ -113,6 +113,12 @@ module.exports = {
       minify: {collapseWhitespace: true},
       hash: true
     }),
+    new HtmlWebPackPlugin({
+      filename: 'chronery.html',
+      template: './src/chronery.html',
+      minify: {collapseWhitespace: true},
+      hash: true
+    }),
     new ExtractTextPlugin({
       filename: 'main.css',
       disable: !isProd,
