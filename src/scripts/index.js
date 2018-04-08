@@ -11,7 +11,7 @@ import './contact-form';
 
 $('#btnMore').click(function () {
   $('html, body').animate({
-    scrollTop: $('#aboutContainer').offset().top
+    scrollTop: $('#first').offset().top
   }, 500);
 });
 
