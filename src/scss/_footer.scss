@@ -103,7 +103,7 @@ footer {
     @include prefix(box-shadow, 0 1px 6px rgba(0, 0, 0, 0.175));
     color: $body-bg;
     padding: .8rem;
-    margin: 0 1rem;
+    margin: 0 1rem 1rem 0;
     transition: all .3s ease;
 
     /* Force Hardware Acceleration in WebKit */
