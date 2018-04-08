@@ -37,14 +37,14 @@ const headerShrinker = function () {
 const timelineAnimatons = function () {
   // animations for timeline
   const timelineItems = $('.timeline-item');
-  const animateFadeIn = $('.tile, .external-link');
+  const animateFadeIn = $('.to-fade-in');
   const contactFields = $('.contact');
 
 
   //hide timeline blocks which are outside the viewport
   timelineItems.each(function () {
     if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-      $(this).find('.timeline-icon, .timeline-content, .timeline-img').addClass('is-hidden');
+      $(this).find('.timeline-icon').addClass('is-hidden');
     }
   });
   animateFadeIn.each(function (idx) {
@@ -69,7 +69,6 @@ const timelineAnimatons = function () {
     timelineItems.each(function () {
       if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(this).find('.timeline-icon, .timeline-img').hasClass('is-hidden')) {
         $(this).find('.timeline-icon').removeClass('is-hidden').addClass('bounce-in');
-        $(this).find('.timeline-content, .timeline-img').removeClass('is-hidden').addClass('fade-in');
       }
     });
     animateFadeIn.each(function (idx) {

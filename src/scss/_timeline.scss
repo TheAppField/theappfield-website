@@ -92,15 +92,6 @@ $line-color: map-get($theme-colors, light);
       @include prefix(border-radius, $border-radius);
       @include prefix(transition, all .3s ease);
 
-      /* Force Hardware Acceleration in WebKit */
-      -webkit-transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-
-      &.is-hidden {
-        visibility: hidden;
-        transform: translate3d(0, 20px, 0);
-      }
-
       .timeline-title {
         color: $body-bg;
         font-size: 1.5rem;
