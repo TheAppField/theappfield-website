@@ -3,9 +3,9 @@ footer {
   padding: 3rem 2rem;
 
   .title {
-    font-size: 2rem;
-    padding-bottom: 1rem;
+    font-size: 3rem;
     text-align: center;
+    padding-bottom: 3rem;
   }
 
   .form-group {
@@ -86,15 +86,11 @@ footer {
     }
   }
 
-  .copyright {
-    margin-top: 3rem;
-    padding: 0;
-    font-size: .75rem;
+  .contact-details {
     color: $body-bg;
-
-    a {
-      color: inherit;
-    }
+    margin-top: 3rem;
+    line-height: 5rem;
+    text-align: center;
   }
 
   .external-link {
@@ -125,6 +121,17 @@ footer {
       a {
         text-decoration: none;
       }
+    }
+  }
+
+  .copyright {
+    margin-top: 3rem;
+    padding: 0;
+    font-size: .75rem;
+    color: $body-bg;
+
+    a {
+      color: inherit;
     }
   }
 }
