@@ -17,6 +17,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: .2rem;
 }
 
+h3 {
+  color: $body-bg;
+  font-size: 3rem;
+}
+
 html, body {
   font-size: 1.05rem;
 }
