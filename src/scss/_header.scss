@@ -1,13 +1,6 @@
 .header {
-  //position: fixed;
-  //top: 0;
-  //right: 0;
-  //bottom: 0;
-  //left: 0;
   flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   background-image: url(./../img/header.jpg);
   background-position: center center;
   background-size: cover;
@@ -41,9 +34,7 @@
     height: 60vh;
     background-color: rgba(0, 0, 0, 0.35);
     border-radius: $border-radius;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
   }
 
   .header-title {

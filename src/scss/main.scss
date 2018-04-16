@@ -1,12 +1,12 @@
-@import '_global.scss';
 @import '_custom';
+@import '_global.scss';
 @import '_header';
 @import '_section';
 @import '_timeline';
 @import '_tiles';
 @import '_footer';
 @import '_contact-me';
-@import './chronery/_header';
+@import 'chronery/chronery';
 
 $fa-font-path: "~@fortawesome/fontawesome-pro-webfonts/webfonts";
 @import '~@fortawesome/fontawesome-pro-webfonts/scss/fontawesome.scss';
@@ -35,7 +35,7 @@ html, body {
 }
 
 @include media-breakpoint-between(xs, sm) {
-  .row .col-xs-12:nth-child(odd) {
+  .theappfield .tiles-container .row .col-xs-12:nth-child(odd) {
     padding-bottom: 2rem;
   }
 }

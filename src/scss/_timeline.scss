@@ -55,9 +55,7 @@ $line-color: map-get($theme-colors, light);
     @extend %clearfix;
 
     .timeline-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
       background-color: $line-color;
       color: white;
       width: 70px;

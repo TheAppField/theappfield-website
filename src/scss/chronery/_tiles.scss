@@ -1,0 +1,22 @@
+.tiles-container {
+
+  .tile {
+    margin-bottom: 2rem;
+    padding-bottom: 0;
+
+    .tile-inner-text {
+      padding: 2rem;
+
+      p:last-of-type {
+        margin-bottom: 0rem;
+      }
+    }
+  }
+}
+
+
+@include media-breakpoint-up (sm) {
+  .tile {
+    padding-bottom: 0;
+  }
+}
