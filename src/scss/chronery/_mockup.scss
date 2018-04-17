@@ -14,15 +14,15 @@
     .mockup-img-container {
       text-align: center;
 
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: -10rem;
-        left: calc(50% - 4px);
-        width: 4px;
-        height: 10rem;
-        background-color: map-get($theme-colors, light);
-      }
+      //&:after {
+      //  content: "";
+      //  position: absolute;
+      //  bottom: -10rem;
+      //  left: calc(50% - 4px);
+      //  width: 4px;
+      //  height: 10rem;
+      //  background-color: map-get($theme-colors, light);
+      //}
     }
 
     .mockup-img {
