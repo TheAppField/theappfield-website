@@ -1,20 +1,20 @@
 import './../scss/main.scss';
 import fontawesome from '@fortawesome/fontawesome';
 import brands from '@fortawesome/fontawesome-free-brands';
-
-fontawesome.library.add(brands);
-
 import 'jquery';
 import 'jquery-validation';
 import 'jquery-form';
 import './contact-form';
+import 'owl.carousel';
+
+
+fontawesome.library.add(brands);
 
 $('#btnMore').click(function () {
   $('html, body').animate({
     scrollTop: $('#first').offset().top
   }, 500);
 });
-
 
 /*  Header */
 const headerShrinker = function () {
@@ -92,7 +92,75 @@ const timelineAnimatons = function () {
   });
 };
 
+function setupCarousel() {
+
+  const mockupCarousel = $('.owl-carousel');
+  if (mockupCarousel) {
+    (function ($) {
+      $('.owl-carousel').owlCarousel(
+        {
+          loop: true,
+          margin: 5,
+          center: true,
+          nav: false,
+          dot: true,
+          lazyload: true,
+          slideSpeed: 5000,
+          paginationSpeed: 5000,
+          rewindSpeed: 5000,
+          navigation: true,
+          pagination: true,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          responsive: {
+            0: {
+              items: 1
+            },
+            600: {
+              items: 3
+            },
+            1000: {
+              items: 5
+            }
+          }
+        }
+      );
+    })(jQuery);
+
+
+    // mockupCarousel.carousel(
+    //   {
+    //     loop: true,
+    //     margin: 5,
+    //     center: true,
+    //     nav: false,
+    //     dot: true,
+    //     lazyload: true,
+    //     slideSpeed: 5000,
+    //     paginationSpeed: 5000,
+    //     rewindSpeed: 5000,
+    //     navigation: true,
+    //     pagination: true,
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     responsive: {
+    //       0: {
+    //         items: 1
+    //       },
+    //       600: {
+    //         items: 3
+    //       },
+    //       1000: {
+    //         items: 5
+    //       }
+    //     }
+    //   });
+  }
+
+}
+
 $('document').ready(() => {
   // headerShrinker();
   timelineAnimatons();
+  setupCarousel();
 });

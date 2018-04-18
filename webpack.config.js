@@ -55,7 +55,7 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.(jpe?g|png|gif|svg)$/i,
+          test: /\.(jpe?g|png|gif|svg)$/,
           use: [
             {
               loader: 'file-loader',
@@ -68,7 +68,7 @@ module.exports = (env, argv) => {
           ]
         },
         {
-          test: /\.(scss)$/,
+          test: /\.(css|scss)$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -128,7 +128,8 @@ module.exports = (env, argv) => {
         $: 'jquery',
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default']
+        Popper: ['popper.js', 'default'],
+        'Util': "exports-loader?Util!bootstrap/js/dist/util"
       })
     ]
   }
