@@ -1,4 +1,3 @@
-
 function setupCarousel() {
   let activeIndex = 0;
   const mockupTexts = $('.mockup-text');
@@ -9,7 +8,7 @@ function setupCarousel() {
       owl.owlCarousel(
         {
           loop: true,
-          margin: 5,
+          margin: 0,
           center: true,
           nav: false,
           dot: true,
@@ -24,20 +23,21 @@ function setupCarousel() {
           responsive: {
             0: {
               items: 1
-            },
-            768: {
-              items: 3
-            },
-            960: {
-              items: 5
             }
           }
         }
       );
+      document.getElementById('carouselBtnPrev').onclick = function () {
+        owl.trigger('prev.owl.carousel');
+      };
+
+      document.getElementById('carouselBtnNext').onclick = function () {
+        owl.trigger('next.owl.carousel');
+      };
     })(jQuery);
   }
 
-  owl.on('changed.owl.carousel', function(event) {
+  owl.on('changed.owl.carousel', function (event) {
     $(mockupTexts[activeIndex]).removeClass('appear').addClass('appear-is-hidden');
     activeIndex = event.page.index;
     $(mockupTexts[activeIndex]).removeClass('appear-is-hidden').addClass('appear');

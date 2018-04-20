@@ -1,6 +1,28 @@
 .chronery {
   .mockups {
 
+    .owl-carousel {
+      max-width: 224px;
+      margin: 3rem auto 0 auto;
+    }
+
+    .carousel-arrow {
+      height: 100%;
+      width: 100%;
+      font-size: 5rem;
+      background-color: inherit;
+      transition: background-color .3s, color .3s;
+      &:hover {
+        background-color: map-get($theme-colors, light);
+        color: $body-bg;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
     .mockup-text-container {
       position: relative;
       height: 214px;
@@ -10,6 +32,7 @@
     .mockup-text {
       @include background-styled;
       position: absolute;
+      top: 50%;
       padding: 1.5rem 2rem;
       transition: opacity .3s ease-out, visibility .3s ease-out;
     }
@@ -23,18 +46,33 @@
     }
 
     .mockup-phone-img {
-      width: 248px;
+      max-width: 250px;
       position: absolute;
       left: 0;
       right: 0;
       margin: 0 auto;
       transform: translate3d(0, -33.3rem, 0);
-      z-index: 1;
+    }
+    @include media-breakpoint-down(md) {
+      .carousel-arrow {
+        font-size: 2rem;
+      }
+      .container {
+        max-width: none;
+      }
+    }
+
+    @include media-breakpoint-only(md) {
+      .carousel-arrow {
+        font-size: 3rem;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .mockup-text {
+        margin-right: 1rem;
+      }
+
     }
   }
-
-  @include media-breakpoint-up(md) {
-
-  }
-
 }
