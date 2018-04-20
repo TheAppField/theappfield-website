@@ -1,0 +1,23 @@
+.chronery {
+
+  .owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 5rem;
+  }
+
+  .owl-theme .owl-dots .owl-dot {
+    outline: none;
+  }
+
+  .owl-theme .owl-dots .owl-dot span {
+    width: 14px;
+    height: 14px;
+    margin: 0 .5rem;
+    background-color: map-get($theme-colors, light);
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span {
+    border: 2px solid white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  }
+
+}

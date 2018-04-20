@@ -19,6 +19,18 @@
   }
 }
 
+.appear-is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  //transition: opacity .3s;
+}
+
+.appear {
+  visibility: visible;
+  opacity: 1;
+  //transition: opacity .3s;
+}
+
 @mixin background-styled {
   text-align: center;
   color: white;

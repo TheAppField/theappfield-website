@@ -6,7 +6,7 @@ import 'jquery-validation';
 import 'jquery-form';
 import './contact-form';
 import 'owl.carousel';
-
+import './owl';
 
 fontawesome.library.add(brands);
 
@@ -92,75 +92,7 @@ const timelineAnimatons = function () {
   });
 };
 
-function setupCarousel() {
-
-  const mockupCarousel = $('.owl-carousel');
-  if (mockupCarousel) {
-    (function ($) {
-      $('.owl-carousel').owlCarousel(
-        {
-          loop: true,
-          margin: 5,
-          center: true,
-          nav: false,
-          dot: true,
-          lazyload: true,
-          slideSpeed: 5000,
-          paginationSpeed: 5000,
-          rewindSpeed: 5000,
-          navigation: true,
-          pagination: true,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          responsive: {
-            0: {
-              items: 1
-            },
-            600: {
-              items: 3
-            },
-            1000: {
-              items: 5
-            }
-          }
-        }
-      );
-    })(jQuery);
-
-
-    // mockupCarousel.carousel(
-    //   {
-    //     loop: true,
-    //     margin: 5,
-    //     center: true,
-    //     nav: false,
-    //     dot: true,
-    //     lazyload: true,
-    //     slideSpeed: 5000,
-    //     paginationSpeed: 5000,
-    //     rewindSpeed: 5000,
-    //     navigation: true,
-    //     pagination: true,
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     responsive: {
-    //       0: {
-    //         items: 1
-    //       },
-    //       600: {
-    //         items: 3
-    //       },
-    //       1000: {
-    //         items: 5
-    //       }
-    //     }
-    //   });
-  }
-
-}
-
 $('document').ready(() => {
   // headerShrinker();
   timelineAnimatons();
-  setupCarousel();
 });
