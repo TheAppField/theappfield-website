@@ -34,9 +34,20 @@
       color: white;
     }
   }
+  @include media-breakpoint-only(xs) {
+    .tile {
+      border-radius: 0;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .row .col-xs-12:nth-child(odd) {
+      padding-right: 2rem;
+    }
+  }
 }
 
-@include media-breakpoint-between (xs, md) {
+@include media-breakpoint-between (xs, sm) {
   .tiles-container {
     flex-direction: column;
 
@@ -44,4 +55,8 @@
       width: 100%;
     }
   }
+  //
+  //.tiles-container .row .col-xs-12:nth-child(odd) {
+  //  padding-bottom: 2rem;
+  //}
 }

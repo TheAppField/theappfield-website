@@ -44,8 +44,8 @@ html, body {
   }
 }
 
-@include media-breakpoint-between(xs, sm) {
-  .theappfield .tiles-container .row .col-xs-12:nth-child(odd) {
+@include media-breakpoint-between (xs, sm) {
+  .row .col-xs-12:nth-child(odd) {
     padding-bottom: 2rem;
   }
 }
