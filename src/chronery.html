@@ -86,16 +86,18 @@
     <div class="container">
         <h2 class="title">Was kann Chronery?</h2>
 
-        <div class="btn-group btn-group-lg  btn-group-toggle" data-toggle="buttons">
-            <label class="btn  btn-secondary active">
-                <input type="radio" name="options" id="option1" autocomplete="off" checked> <i
-                    class="fal fa-mobile-android"></i>
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="options" id="option2" autocomplete="off"><i class="fal fa-laptop"></i>
-            </label>
+        <div class="mockup-selection">
+            <div class="btn-group btn-group-lg  btn-group-toggle" data-toggle="buttons">
+                <label class="btn  btn-light active" id="mockupSmartphoneSelected">
+                    <input type="radio" name="mockupOptions" id="optionSmartphone" autocomplete="off" checked>
+                    <i class="fal fa-mobile-android"></i>
+                </label>
+                <label class="btn btn-light" id="mockupNotebokSelected">
+                    <input type="radio" name="mockupOptions" id="optionNotebook" autocomplete="off"><i
+                        class="fal fa-laptop"></i>
+                </label>
+            </div>
         </div>
-
         <div class="row">
             <div class="col-2 col-md-1">
                 <button id="carouselBtnPrev" class="btn btn-default carousel-arrow">
@@ -103,20 +105,33 @@
                 </button>
             </div>
             <div class="col-8 col-md-5 ">
-                <div class="owl-carousel owl-theme mockup-carousel">
-                    <div><img src="./img/chronery-screenshot.png" alt="Chronery Mockup"></div>
-                    <div><img src="./img/chronery-screenshot.png" alt="Chronery Mockup"></div>
-                    <div><img src="./img/chronery-screenshot.png" alt="Chronery Mockup"></div>
-                    <div><img src="./img/chronery-screenshot.png" alt="Chronery Mockup"></div>
+                <div id="carouselSmartphone">
+                    <div class="owl-carousel owl-theme mockup-carousel">
+                        <div><img src="./img/chronery-screenshot-smartphone.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-smartphone.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-smartphone.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-smartphone.png" alt="Chronery Mockup"></div>
+                    </div>
+                    <div class="mockup-phone">
+                        <img src="./img/mockup-phone.png" alt="" class="mockup-phone-img">
+                    </div>
                 </div>
-                <div class="mockup-phone">
-                    <img src="./img/mockup-phone.png" alt="" class="mockup-phone-img">
+
+                <div id="carouselNotebook" class="hide-mockup">
+                    <div class="owl-carousel owl-theme mockup-carousel">
+                        <div><img src="./img/chronery-screenshot-notebook.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-notebook.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-notebook.png" alt="Chronery Mockup"></div>
+                        <div><img src="./img/chronery-screenshot-notebook.png" alt="Chronery Mockup"></div>
+                    </div>
+                    <div class="mockup-phone">
+                        <img src="./img/mockup-notebook.png" alt="" class="mockup-phone-img">
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-5 oder-md-3 order-4 mockup-text-container">
-                <!--<div class="mockup-text-container">-->
                 <div class="owl-carousel owl-theme">
-                    <div class="mockup-text appear">
+                    <div class="mockup-text">
                         <h3>Dashboard</h3>
                         <p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                             tempor invidunt
@@ -154,45 +169,6 @@
                             diam nonumy eirmod tempor inviduntut labore et do</p>
                     </div>
                 </div>
-
-                    <!--<div class="mockup-text appear">-->
-                        <!--<h3>Dashboard</h3>-->
-                        <!--<p> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod-->
-                            <!--tempor invidunt-->
-                            <!--ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo-->
-                            <!--duo-->
-                            <!--dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum-->
-                            <!--dolor-->
-                            <!--sit amet. Lorem ipsum dolor sit amet,</p>-->
-                    <!--</div>-->
-                    <!--<div class="mockup-text appear-is-hidden">-->
-                        <!--<h3>Projekte</h3>-->
-                        <!--<p>lore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo-->
-                            <!--dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum-->
-                            <!--dolor-->
-                            <!--sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing-->
-                            <!--elitr, sed-->
-                            <!--diam nonumy eirmod tempor inviduntut labore et do</p>-->
-                    <!--</div>-->
-                    <!--<div class="mockup-text appear-is-hidden">-->
-                        <!--<h3>Arbeitszeit</h3>-->
-                        <!--<p>lore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo-->
-                            <!--dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum-->
-                            <!--dolor-->
-                            <!--sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing-->
-                            <!--elitr, sed-->
-                            <!--diam nonumy eirmod tempor inviduntut labore et do</p>-->
-                    <!--</div>-->
-                    <!--<div class="mockup-text appear-is-hidden">-->
-                        <!--<h3>Berichte</h3>-->
-                        <!--<p>lore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo-->
-                            <!--dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum-->
-                            <!--dolor-->
-                            <!--sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing-->
-                            <!--elitr, sed-->
-                            <!--diam nonumy eirmod tempor inviduntut labore et do</p>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
             <div class="col-2 col-md-1 order-md-4 order-3">
                 <button id="carouselBtnNext" class="btn carousel-arrow">

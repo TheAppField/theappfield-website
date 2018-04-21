@@ -1,8 +1,49 @@
 .chronery {
   .mockups {
 
+    .title {
+      padding-bottom: 1rem;
+    }
+
+    .mockup-selection {
+      display: flex;
+      padding-bottom: 2rem;
+
+      .btn-group {
+        margin: 0 auto;
+      }
+    }
+
+    #carouselSmartphone {
+      $carousel-notebook-width: 224px;
+      .mockup-carousel {
+        max-width: $carousel-notebook-width;
+      }
+      .owl-carousel .owl-item img {
+        width: $carousel-notebook-width;
+      }
+
+      .mockup-phone-img {
+        max-width: 250px;
+        transform: translate3d(0, -33.3rem, 0);
+      }
+    }
+    #carouselNotebook {
+      $carousel-notebook-width: 320px;
+      .mockup-carousel {
+        max-width: $carousel-notebook-width;
+      }
+      .owl-carousel .owl-item img {
+        width: $carousel-notebook-width;
+      }
+
+      .mockup-phone-img {
+        max-width: 420px;
+        transform: translate3d(0, -19.36rem, 0);
+      }
+    }
+
     .mockup-carousel {
-      max-width: 224px;
       margin: 3rem auto 0 auto;
 
       .owl-item:hover {
@@ -36,19 +77,23 @@
     }
 
     .mockup-phone-img {
-      max-width: 250px;
       position: absolute;
       left: 0;
       right: 0;
       margin: 0 auto;
-      transform: translate3d(0, -33.3rem, 0);
+    }
+
+    .hide-mockup {
+      visibility: hidden !important;
+      height: 0 !important;
+      opacity: 0 !important;
     }
 
     @include media-breakpoint-down(sm) {
       .mockup-text-container {
         padding-top: 1rem;
 
-        .mockup-text{
+        .mockup-text {
           border-radius: 0;
         }
       }

@@ -1,21 +1,51 @@
 function setupCarousel() {
-  let activeIndex = 0;
-  const mockupTexts = $('.mockup-text');
 
-  const owl = $('.owl-carousel');
-  if (owl) {
+  const btnSmartphone = document.getElementById('mockupSmartphoneSelected');
+  const btnNotebook = document.getElementById('mockupNotebokSelected');
+  const carouselSmartphoneContainer = $('#carouselSmartphone');
+  const carouselNotebookContainer = $('#carouselNotebook');
+  let isSmartphoneActive = true;
+
+  btnSmartphone.onclick = function () {
+    console.log('switch mockups carousel!');
+    carouselNotebookContainer.addClass('hide-mockup');
+    carouselSmartphoneContainer.removeClass('hide-mockup');
+    isSmartphoneActive = true;
+  };
+
+  btnNotebook.onclick = function () {
+    console.log('switch mockups carousel!');
+    carouselSmartphoneContainer.addClass('hide-mockup');
+    carouselNotebookContainer.removeClass('hide-mockup');
+    isSmartphoneActive = false;
+  };
+
+  const owlSmartphone = $('#carouselSmartphone>.owl-carousel');
+  const owlNotebook = $('#carouselNotebook>.owl-carousel');
+  const owlText = $('.mockup-text-container>.owl-carousel');
+
+  if (owlSmartphone && owlNotebook && owlText) {
     (function ($) {
-      $(owl[0]).owlCarousel({
+      owlSmartphone.owlCarousel({
         items: 1,
         loop: true,
         margin: 0,
         center: true,
         nav: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
-
       });
-      $(owl[1]).owlCarousel({
+      owlNotebook.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        center: true,
+        nav: false,
+        autoplay: false,
+        autoplaySpeed: 2000,
+      });
+
+      owlText.owlCarousel({
         items: 1,
         animateOut: 'fadeOut',
         loop: true,
@@ -28,20 +58,22 @@ function setupCarousel() {
         autoplay: false
       });
       document.getElementById('carouselBtnPrev').onclick = function () {
-        owl.trigger('prev.owl.carousel');
+        owlSmartphone.trigger('prev.owl.carousel');
+        owlNotebook.trigger('prev.owl.carousel');
       };
 
       document.getElementById('carouselBtnNext').onclick = function () {
-        owl.trigger('next.owl.carousel');
+        owlSmartphone.trigger('next.owl.carousel');
+        owlNotebook.trigger('next.owl.carousel');
       };
     })(jQuery);
   }
 
-  $(owl[0]).on('changed.owl.carousel', function (event) {
-    $(owl[1]).trigger('to.owl.carousel', event.page.index);
-    // $(mockupTexts[activeIndex]).removeClass('appear').addClass('appear-is-hidden');
-    // activeIndex = event.page.index;
-    // $(mockupTexts[activeIndex]).removeClass('appear-is-hidden').addClass('appear');
+  owlSmartphone.on('changed.owl.carousel', function (event) {
+    if (isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
+  });
+  owlNotebook.on('changed.owl.carousel', function (event) {
+    if (!isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
   });
 
 }

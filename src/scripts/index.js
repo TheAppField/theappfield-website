@@ -4,6 +4,7 @@ import brands from '@fortawesome/fontawesome-free-brands';
 import 'jquery';
 import 'jquery-validation';
 import 'jquery-form';
+import 'bootstrap';
 import './contact-form';
 import 'owl.carousel';
 import './owl';
