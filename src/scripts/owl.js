@@ -5,28 +5,28 @@ function setupCarousel() {
   const owl = $('.owl-carousel');
   if (owl) {
     (function ($) {
-      owl.owlCarousel(
-        {
-          loop: true,
-          margin: 0,
-          center: true,
-          nav: false,
-          dot: true,
-          lazyload: true,
-          slideSpeed: 5000,
-          paginationSpeed: 5000,
-          rewindSpeed: 5000,
-          navigation: true,
-          pagination: true,
-          autoplay: false,
-          autoplaySpeed: 2000,
-          responsive: {
-            0: {
-              items: 1
-            }
-          }
-        }
-      );
+      $(owl[0]).owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        center: true,
+        nav: false,
+        autoplay: true,
+        autoplaySpeed: 2000,
+
+      });
+      $(owl[1]).owlCarousel({
+        items: 1,
+        animateOut: 'fadeOut',
+        loop: true,
+        margin: 5,
+        center: true,
+        nav: false,
+        dots: false,
+        mouseDrag: false,
+        autoplaySpeed: 1000,
+        autoplay: true
+      });
       document.getElementById('carouselBtnPrev').onclick = function () {
         owl.trigger('prev.owl.carousel');
       };
@@ -38,9 +38,9 @@ function setupCarousel() {
   }
 
   owl.on('changed.owl.carousel', function (event) {
-    $(mockupTexts[activeIndex]).removeClass('appear').addClass('appear-is-hidden');
-    activeIndex = event.page.index;
-    $(mockupTexts[activeIndex]).removeClass('appear-is-hidden').addClass('appear');
+    // $(mockupTexts[activeIndex]).removeClass('appear').addClass('appear-is-hidden');
+    // activeIndex = event.page.index;
+    // $(mockupTexts[activeIndex]).removeClass('appear-is-hidden').addClass('appear');
   });
 
 }
