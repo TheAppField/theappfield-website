@@ -25,7 +25,7 @@ function setupCarousel() {
         dots: false,
         mouseDrag: false,
         autoplaySpeed: 1000,
-        autoplay: true
+        autoplay: false
       });
       document.getElementById('carouselBtnPrev').onclick = function () {
         owl.trigger('prev.owl.carousel');
@@ -37,7 +37,8 @@ function setupCarousel() {
     })(jQuery);
   }
 
-  owl.on('changed.owl.carousel', function (event) {
+  $(owl[0]).on('changed.owl.carousel', function (event) {
+    $(owl[1]).trigger('to.owl.carousel', event.page.index);
     // $(mockupTexts[activeIndex]).removeClass('appear').addClass('appear-is-hidden');
     // activeIndex = event.page.index;
     // $(mockupTexts[activeIndex]).removeClass('appear-is-hidden').addClass('appear');
