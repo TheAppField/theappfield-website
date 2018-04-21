@@ -16,6 +16,10 @@
 
       .btn-group {
         margin: 0 auto;
+
+        .btn {
+          min-width: 100px;
+        }
       }
     }
 
