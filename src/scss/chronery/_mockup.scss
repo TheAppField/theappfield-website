@@ -1,5 +1,10 @@
 .chronery {
   .mockups {
+    $carousel-smartphone-width: 224px;
+
+    @include media-breakpoint-up(lg) {
+      $carousel-notebook-width: 300px;
+    }
 
     .title {
       padding-bottom: 1rem;
@@ -15,12 +20,12 @@
     }
 
     #carouselSmartphone {
-      $carousel-notebook-width: 224px;
+
       .mockup-carousel {
-        max-width: $carousel-notebook-width;
+        max-width: $carousel-smartphone-width;
       }
       .owl-carousel .owl-item img {
-        width: $carousel-notebook-width;
+        max-width: $carousel-smartphone-width;
       }
 
       .mockup-phone-img {
@@ -29,17 +34,42 @@
       }
     }
     #carouselNotebook {
-      $carousel-notebook-width: 320px;
-      .mockup-carousel {
-        max-width: $carousel-notebook-width;
-      }
-      .owl-carousel .owl-item img {
-        width: $carousel-notebook-width;
+      .mockup-carousel, .owl-carousel .owl-item img {
+        max-width: 200px;
       }
 
       .mockup-phone-img {
-        max-width: 420px;
-        transform: translate3d(0, -19.36rem, 0);
+        max-width: 262px;
+        transform: translate3d(0, -14.5rem, 0);
+      }
+
+      @include media-breakpoint-only(sm) {
+        .mockup-carousel, .owl-carousel .owl-item img {
+          max-width: 220px;
+        }
+        .mockup-phone-img {
+          max-width: 288px;
+          transform: translate3d(0, -15.35rem, 0);
+        }
+      }
+      @include media-breakpoint-up(md) {
+        .mockup-carousel, .owl-carousel .owl-item img {
+          max-width: 250px;
+        }
+        .mockup-phone-img {
+          max-width: 327px;
+          transform: translate3d(0, -16.5rem, 0);
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        .mockup-carousel, .owl-carousel .owl-item img {
+          max-width: 300px;
+        }
+        .mockup-phone-img {
+          max-width: 392px;
+          transform: translate3d(0, -18.5rem, 0);
+        }
       }
     }
 
@@ -90,6 +120,7 @@
     }
 
     @include media-breakpoint-down(sm) {
+      $carousel-notebook-width: $carousel-smartphone-width;
       .mockup-text-container {
         padding-top: 1rem;
 

@@ -76,6 +76,11 @@ function setupCarousel() {
     if (!isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
   });
 
+  owlNotebook.on('resized.owl.carousel', function(event) {
+    console.log('resized');
+
+  })
+
 }
 
 $('document').ready(() => {
