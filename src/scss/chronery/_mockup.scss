@@ -1,5 +1,6 @@
 .chronery {
   .mockups {
+    margin-bottom: 3rem;
     $carousel-smartphone-width: 224px;
 
     @include media-breakpoint-up(lg) {
