@@ -1,9 +1,19 @@
 .try-out {
   margin: 5rem 0;
 
+  .container {
+    text-align: center;
+  }
+
   .btn-call-to-action {
     @include box-shadow;
     @include scale;
+    font-size: 2.5rem;
+    //background-color: map-get($theme-colors, secondary);
+    background-color: #009688;
+    border-color: #009688;
+    color: white;
+    text-transform: uppercase;
     padding: 2rem;
   }
 
@@ -13,7 +23,7 @@
 
   @include media-breakpoint-up(md) {
     .btn-call-to-action {
-      max-width: 50%;
+      //max-width: 50%;
       margin: 0 auto;
     }
   }
