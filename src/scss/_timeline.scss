@@ -120,10 +120,6 @@ $line-color: map-get($theme-colors, light);
       @include prefix(box-shadow, 0 1px 6px rgba(0, 0, 0, 0.175));
       @include prefix(transition, all .3s ease);
 
-      /* Force Hardware Acceleration in WebKit */
-      -webkit-transform: translateZ(0);
-      -webkit-backface-visibility: hidden;
-
       &.is-hidden {
         visibility: hidden;
         transform: translate3d(0, 20px, 0);
@@ -146,7 +142,6 @@ $line-color: map-get($theme-colors, light);
       .timeline-content {
         width: 80%;
         float: right;
-        //position: relative;
       }
 
       &:last-of-type::before {
@@ -158,52 +153,5 @@ $line-color: map-get($theme-colors, light);
         background: $line-color;
       }
     }
-  }
-}
-
-//
-//@include media-breakpoint-only(xs) {
-//  .timeline {
-//    &:before {
-//      //height: calc(100% - 150px);
-//    }
-//
-//    .timeline-img {
-//      width: 293px;
-//
-//      &:before {
-//        content: "";
-//        position: absolute;
-//        right: 50%;
-//        width: calc(50% - 26px);
-//        height: 4px;
-//        background: $line-color;
-//      }
-//    }
-//  }
-//}
-
-@include media-breakpoint-between(sm, md) {
-
-}
-
-.bounce-in {
-  visibility: visible;
-  animation: timeline-bounce .6s;
-}
-
-@keyframes timeline-bounce {
-  0% {
-    opacity: 0;
-    transform: scale(.5);
-  }
-
-  60% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
   }
 }

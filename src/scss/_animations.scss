@@ -1,0 +1,65 @@
+$animation-duration: .3s;
+
+.to-fade-in, to-bounce-in {
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.to-fade-in {
+  transition: transform .3s ease;
+
+  &.is-hidden {
+    visibility: hidden;
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+.fade-in {
+  visibility: visible;
+  animation: fade-in .6s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.to-bounce-in {
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  &.is-hidden {
+    visibility: hidden;
+    transform: scale(0);
+  }
+}
+
+.bounce-in {
+
+  visibility: visible;
+  animation: timeline-bounce .6s;
+}
+
+@keyframes timeline-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(.5);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+

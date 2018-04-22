@@ -35,11 +35,11 @@ const headerShrinker = function () {
   });
 };
 
-const timelineAnimatons = function () {
+const setupAnimations = function () {
   // animations for timeline
   const timelineItems = $('.timeline-item');
   const animateFadeIn = $('.to-fade-in');
-  const contactFields = $('.contact');
+  const animateBounceIn = $('.to-bounce-in');
 
 
   //hide timeline blocks which are outside the viewport
@@ -53,15 +53,9 @@ const timelineAnimatons = function () {
       $(animateFadeIn[idx]).addClass('is-hidden');
     }
   });
-  contactFields.each(function (idx) {
-    if (idx !== contactFields.length - 1) {
-      if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
-        $(contactFields[idx]).addClass('is-hidden');
-      }
-    } else {
-      if ($(this).offset().top > $(window).scrollTop() + $(window).height()) {
-        $(contactFields[idx]).addClass('is-hidden');
-      }
+  animateBounceIn.each(function (idx) {
+    if ($(this).offset().top > $(window).scrollTop() + $(window).height() * 0.75) {
+      $(animateBounceIn[idx]).addClass('is-hidden');
     }
   });
 
@@ -75,25 +69,22 @@ const timelineAnimatons = function () {
     animateFadeIn.each(function (idx) {
       if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(animateFadeIn[idx]).hasClass('is-hidden')) {
         $(animateFadeIn[idx]).removeClass('is-hidden').addClass('fade-in');
+
+        if ($(animateFadeIn[idx]).hasClass('contact-message')) {
+          $(animateFadeIn[idx + 1]).removeClass('is-hidden').addClass('fade-in');
+        }
       }
     });
 
-    contactFields.each(function (idx) {
-      if (idx !== contactFields.length - 1) {
-        if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(contactFields[idx]).hasClass('is-hidden')) {
-          $(contactFields[idx]).removeClass('is-hidden').addClass('fade-in');
-        }
-      } else {
-        if ($(this).offset().top <= $(window).scrollTop() + $(window).height() && $(contactFields[idx]).hasClass('is-hidden')) {
-          $(contactFields[idx]).removeClass('is-hidden').addClass('fade-in');
-        }
+    animateBounceIn.each(function (idx) {
+      if ($(this).offset().top <= $(window).scrollTop() + $(window).height() * 0.75 && $(animateBounceIn[idx]).hasClass('is-hidden')) {
+        $(animateBounceIn[idx]).removeClass('is-hidden').addClass('bounce-in');
       }
-
     });
   });
 };
 
 $('document').ready(() => {
   // headerShrinker();
-  timelineAnimatons();
+  setupAnimations();
 });

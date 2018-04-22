@@ -2,16 +2,16 @@ $owl-image-path: "~owl.carousel/src/img/";
 @import '~owl.carousel/src/scss/owl.carousel';
 @import '~owl.carousel/src/scss/owl.theme.default';
 
-
 @import '_custom';
-@import '_global.scss';
+@import '_global';
+@import '_animations';
 @import '_header';
 @import '_section';
 @import '_timeline';
 @import '_tiles';
 @import '_footer';
 @import '_contact-me';
-@import '_try-out.scss';
+@import '_try-out';
 @import 'chronery/chronery';
 
 $fa-font-path: "~@fortawesome/fontawesome-pro-webfonts/webfonts";
@@ -30,19 +30,6 @@ h3 {
 
 html, body {
   font-size: 1.05rem;
-}
-
-.to-fade-in {
-  transition: transform .3s ease;
-
-  /* Force Hardware Acceleration in WebKit */
-  -webkit-transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-
-  &.is-hidden {
-    visibility: hidden;
-    transform: translate3d(0, 20px, 0);
-  }
 }
 
 @include media-breakpoint-between (xs, sm) {
