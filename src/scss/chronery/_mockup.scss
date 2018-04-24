@@ -1,7 +1,7 @@
 .chronery {
   .mockups {
     margin-bottom: 3rem;
-    $carousel-smartphone-width: 224px;
+    $carousel-smartphone-width: 150px;
 
     @include media-breakpoint-up(lg) {
       $carousel-notebook-width: 300px;
@@ -25,7 +25,9 @@
     }
 
     #carouselSmartphone {
-
+      @include media-breakpoint-up(md) {
+        transform: translate3d(0, 2.5rem, 0)
+      }
       .mockup-carousel {
         max-width: $carousel-smartphone-width;
       }
@@ -34,8 +36,8 @@
       }
 
       .mockup-phone-img {
-        max-width: 250px;
-        transform: translate3d(0, -33.3rem, 0);
+        max-width: 169px;
+        transform: translate3d(0, -24.52rem, 0);
       }
     }
     #carouselNotebook {
