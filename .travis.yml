@@ -6,6 +6,7 @@ cache:
     - "node_modules"
 before_install:
   echo "@fortawesome:registry=https://npm.fontawesome.com/\${FONTAWESOME_TOKEN}" > .npmrc
+  npm install -g webpack-cli
 #  sudo ldconfig
 #  sudo apt-get install nasm
 install:
