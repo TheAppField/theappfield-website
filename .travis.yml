@@ -9,6 +9,7 @@ before_install:
 install:
   - npm install
   - sudo ldconfig
+  - sudo apt-get install nasm
 script:
   - npm run build
 deploy:
