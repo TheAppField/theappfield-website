@@ -9,6 +9,15 @@
     .feature-text {
       @include background-styled;
       padding: 2rem;
+      margin-bottom: 2rem;
+      border-radius: 0;
+
+      @include media-breakpoint-up(sm) {
+        border-radius: $border-radius;
+      }
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
     }
 
     .feature-img-container {
