@@ -1,0 +1,25 @@
+.chronery {
+
+  .feature {
+    margin: 10rem 0;
+
+    .row {
+      align-items: center;
+    }
+    .feature-text {
+      @include background-styled;
+      padding: 2rem;
+    }
+
+    .feature-img-container {
+      text-align: center;
+    }
+
+    .feature-img {
+      max-width: 80%;
+      max-height: 400px;
+      border-radius: $border-radius;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    }
+  }
+}
