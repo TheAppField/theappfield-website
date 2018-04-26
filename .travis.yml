@@ -6,9 +6,6 @@ cache:
     - "node_modules"
 before_install:
   - echo "@fortawesome:registry=https://npm.fontawesome.com/\${FONTAWESOME_TOKEN}" > .npmrc
-  - sudo apt-get install autoconf automake gcc nasm libtool
-#  sudo ldconfig
-#  sudo apt-get install nasm
 install:
   - npm install
 script:
