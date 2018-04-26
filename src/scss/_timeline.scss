@@ -91,6 +91,7 @@ $line-color: map-get($theme-colors, light);
       @include prefix(transition, all .3s ease);
 
       .timeline-title {
+        word-break: break-word;
         color: $body-bg;
         font-size: 1.5rem;
         font-weight: 700;
@@ -128,15 +129,15 @@ $line-color: map-get($theme-colors, light);
   }
 }
 
-@include media-breakpoint-between(xs, md) {
+@include media-breakpoint-down(md) {
   .timeline {
     &:before {
-      left: 26px;
+      left: 35px;
       height: calc(100% - 300px);
     }
     .timeline-item {
       .timeline-icon {
-        left: 10px;
+        left: 18px;
       }
 
       .timeline-content {
@@ -147,7 +148,7 @@ $line-color: map-get($theme-colors, light);
       &:last-of-type::before {
         content: "";
         position: absolute;
-        width: calc(50% - 10px);
+        width: calc(50% - 18px);
         right: 50%;
         height: 4px;
         background: $line-color;
