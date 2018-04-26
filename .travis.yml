@@ -8,6 +8,7 @@ before_install:
   echo "@fortawesome:registry=https://npm.fontawesome.com/\${FONTAWESOME_TOKEN}" > .npmrc
 install:
   - npm install
+  - sudo ldconfig
 script:
   - npm run build
 deploy:
