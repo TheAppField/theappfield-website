@@ -66,21 +66,15 @@ function setupCarousel() {
         owlSmartphone.trigger('next.owl.carousel');
         owlNotebook.trigger('next.owl.carousel');
       };
+
+      owlSmartphone.on('changed.owl.carousel', function (event) {
+        if (isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
+      });
+      owlNotebook.on('changed.owl.carousel', function (event) {
+        if (!isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
+      });
     })(jQuery);
   }
-
-  owlSmartphone.on('changed.owl.carousel', function (event) {
-    if (isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
-  });
-  owlNotebook.on('changed.owl.carousel', function (event) {
-    if (!isSmartphoneActive) owlText.trigger('to.owl.carousel', event.page.index);
-  });
-
-  owlNotebook.on('resized.owl.carousel', function(event) {
-    console.log('resized');
-
-  })
-
 }
 
 $('document').ready(() => {
