@@ -102,6 +102,7 @@
 
     .mockup-text-container {
       @include flex-center;
+      margin-top: -50px;
     }
 
     .mockup-text {
@@ -128,12 +129,8 @@
 
     @include media-breakpoint-down(sm) {
       $carousel-notebook-width: $carousel-smartphone-width;
-      .mockup-text-container {
-        padding-top: 1rem;
-
-        .mockup-text {
-          border-radius: 0;
-        }
+      .mockup-text {
+        border-radius: 0;
       }
     }
     @include media-breakpoint-down(md) {

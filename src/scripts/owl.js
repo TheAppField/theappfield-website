@@ -4,12 +4,14 @@ function setupCarousel() {
   const btnNotebook = document.getElementById('mockupNotebokSelected');
   const carouselSmartphoneContainer = $('#carouselSmartphone');
   const carouselNotebookContainer = $('#carouselNotebook');
+  const mockupTextContainer = $('#mockupTextContainer');
   let isSmartphoneActive = true;
 
   btnSmartphone.onclick = function () {
     console.log('switch mockups carousel!');
     carouselNotebookContainer.addClass('hide-mockup');
     carouselSmartphoneContainer.removeClass('hide-mockup');
+    mockupTextContainer.css('margin-top', '-50px');
     isSmartphoneActive = true;
   };
 
@@ -17,6 +19,7 @@ function setupCarousel() {
     console.log('switch mockups carousel!');
     carouselSmartphoneContainer.addClass('hide-mockup');
     carouselNotebookContainer.removeClass('hide-mockup');
+    mockupTextContainer.css('margin-top', 0);
     isSmartphoneActive = false;
   };
 
