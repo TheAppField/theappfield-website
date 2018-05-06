@@ -7,6 +7,14 @@
 
   .about-chronery {
     padding-bottom: 1.5rem;
+    margin-bottom: 0;
+    .feature {
+      margin-bottom: 0;
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
+    }
+
     .tile-title {
       //font-size: 1.5rem;
     }

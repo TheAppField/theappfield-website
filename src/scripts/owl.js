@@ -57,6 +57,7 @@ function setupCarousel() {
         nav: false,
         dots: false,
         mouseDrag: false,
+        touchDrag: false,
         autoplaySpeed: 1000,
         autoplay: false
       });

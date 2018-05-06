@@ -14,6 +14,10 @@
       align-items: center;
     }
 
+    .title {
+      padding-top: 0;
+    }
+
     .feature-text {
       @include background-styled;
       padding: 2rem;
