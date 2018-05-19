@@ -8,7 +8,7 @@
     }
 
     .title {
-      padding-bottom: 1rem;
+      padding: 1rem 0;
     }
 
     .mockup-selection {
@@ -48,6 +48,16 @@
       .mockup-phone-img {
         max-width: 262px;
         transform: translate3d(0, -14.5rem, 0);
+      }
+
+      @media screen and (max-width: 413px) {
+        .mockup-carousel, .owl-carousel .owl-item img {
+          max-width: 168px;
+        }
+        .mockup-phone-img {
+          max-width: 220px;
+          transform: translate3d(0, -13.25rem, 0);
+        }
       }
 
       @include media-breakpoint-only(sm) {
