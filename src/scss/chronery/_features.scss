@@ -14,8 +14,10 @@
       align-items: center;
     }
 
-    .feature-title {
-      padding-top: 0;
+    @include media-breakpoint-up(md) {
+      .feature-title {
+        padding-top: 0;
+      }
     }
 
     .feature-text {
