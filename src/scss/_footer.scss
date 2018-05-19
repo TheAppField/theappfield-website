@@ -17,7 +17,7 @@
     padding-bottom: 2rem;
   }
 
-  .form-group {
+  .form-group, .form-check {
     margin-bottom: 2rem;
 
     .form-control.error {
@@ -42,6 +42,10 @@
       transition: transform .6s;
     }
   }
+  .form-check label.error {
+    border: 1px solid map_get($theme-colors, danger);
+    border-radius: $border-radius;
+  }
 
   .form-control {
     background-color: $body-bg;
@@ -61,6 +65,20 @@
       outline: 0 none;
       transform: scale(1.025);
     }
+  }
+
+  .form-check {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .form-check-label {
+    font-size: .8rem;
+  }
+
+  a {
+    color: $body-bg;
+    text-decoration: underline;
   }
 
   .contact-submit {
@@ -150,7 +168,7 @@
 
   .copyright {
     margin-top: 3rem;
-    padding: 0;
+    padding: 5rem 0 0 0;
     font-size: .75rem;
     color: $body-bg;
 

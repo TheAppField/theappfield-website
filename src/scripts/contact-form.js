@@ -17,13 +17,17 @@ $(document).ready(function () {
         },
         message: {
           required: true
+        },
+        agreement: {
+          required: true
         }
       },
       messages: {
         email: 'Bitte geben Sie eine g&uumlltige E-Mail Adresse an, damit ich Sie kontaktieren kann.',
         name: 'Bitte geben Sie Ihren Namen an.',
         subject: 'Bitte geben Sie Ihren Betreff an.',
-        message: 'Bitte geben Sie Ihre Nachricht an.'
+        message: 'Bitte geben Sie Ihre Nachricht an.',
+        agreement: 'Bitte akzeptieren Sie die Datenschutzerklärung.'
       },
       submitHandler: () => {
         $('#contactForm').ajaxSubmit(() => {
@@ -44,7 +48,8 @@ $(document).ready(function () {
     const email = $('#contactEmail').val(),
       name = $('#contactName').val(),
       subject = $('#contactSubject').val(),
-      message = $('#contactMessage').val();
+      message = $('#contactMessage').val(),
+      agreement = $('#contactAgreement').val();
 
     $.ajax({
       type: 'POST',
@@ -54,7 +59,8 @@ $(document).ready(function () {
         email: email,
         name: name,
         subject: subject,
-        message: message
+        message: message,
+        agreement: agreement
       }),
       success: sendSuccessHandler,
       error: sendErrorHandler
